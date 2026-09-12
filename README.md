@@ -10,6 +10,11 @@ Nine skills for [Claude Code](https://claude.com/claude-code), distilled from a 
 skill library. Each one is a task class, not a preference: a procedure a stranger can run
 on their own material, with the traps named and the costs stated.
 
+> **Built for Claude Code. Only Claude Code.** These use Claude Code's skill format and
+> its loading behaviour, and that is the only setup they are tested on. If you run another
+> agent and want to use them, you are welcome to — but adapting them is your job, not
+> something this repo claims to support.
+
 > **Licence in one line:** free to use, adapt and share for **non-commercial** purposes,
 > with attribution, under the same licence. **Commercial use is not permitted.**
 > Details in [Licence](#licence).
@@ -25,7 +30,7 @@ cp -r claude-skills/*/ ~/.claude/skills/             # all nine
 ```
 
 `~/.claude/skills/` makes a skill available everywhere; `.claude/skills/` inside a
-repository scopes it to that project. Each folder is self-contained - there are no
+repository scopes it to that project. Both paths are Claude Code's. Each folder is self-contained - there are no
 cross-references between them, so take only what you want. Restart Claude Code, or start a
 new session, and ask for the kind of work the skill covers; it loads itself when the
 request matches.
