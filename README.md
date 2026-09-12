@@ -47,13 +47,14 @@ request matches.
 | [**tame-sprawl**](tame-sprawl/) | Tidy a sprawling docs set, skill library, prompt collection or config pile — four steps that may not be skipped, and an acceptance test that is not a file count | English |
 | [**code-print**](code-print/) | Draw printed matter in code instead of generating it — posters, covers, zine pages, tickets, labels. Vector out, type that is never wrong, same input same file. Two drawing engines, a worked example, a self-test | English |
 | [**unknown-first**](unknown-first/) | A standing obligation to hand the person something they did not know, the known/unknown map that records it, and two archives a future model instance can read. Ships a checker | English |
-| [**chinese-prose**](chinese-prose/) | 中文成稿检查表：场合与语气档、大纲三问、删改判据、用字四查、交前五挑错、评稿六看 | 中文 |
+| [**prose**](prose/) | One checklist for prose in **either language** — settle reader, occasion and register first; three questions before the outline; a deletion test about meaning, not word count; five things to catch before it goes out; six things to look at when reviewing. One section on what changes in Chinese, one on what changes in English | English |
 | [**script-check**](script-check/) | 剧本与叙事的结构与对白检查表：一人一事、伏笔成对、对白八查、三处收口、旧本翻新 | 中文 |
 | [**classical-chinese-translation**](classical-chinese-translation/) | 古籍整本译白话的工序与防漂移闸：底本纪律、回目交叉核、四条漂移触发点、pandoc 出书、收工三验 | 中文 |
 
-Language per skill is a decision, not a default. The three Chinese ones encode Chinese
-writing and translation craft; translating them would flatten what they are about. The
-other six apply to any material, so they are in English. A Chinese reader who wants the
+Language per skill is a decision, not a default. The two Chinese ones encode Chinese
+narrative and translation craft; translating them would flatten what they are about. The
+other seven apply to any material, so they are in English — `prose` covers Chinese and
+English writing in one checklist, with one section for each language's own failures. A Chinese reader who wants the
 English six explained in Chinese will find that in [README.zh.md](README.zh.md).
 
 ## What these have in common
