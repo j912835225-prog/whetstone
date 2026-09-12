@@ -1,10 +1,12 @@
-# claude-skills
+# whetstone · 磨刀石
 
 [![English](https://img.shields.io/badge/English-switch-1B3FA0?style=for-the-badge)](README.md)
 [![中文](https://img.shields.io/badge/中文-当前-C1352C?style=for-the-badge)](README.zh.md)
 [![授权](https://img.shields.io/badge/授权-CC%20BY--NC--SA%204.0-2A2A2D?style=for-the-badge)](LICENSE)
 
 **中文** · [English version here / 英文说明点这里](README.md)
+
+**磨刀石自己不切东西，它让刀能切。**
 
 给 [Claude Code](https://claude.com/claude-code) 用的九件 skill，从一套日常在跑的 skill
 库里挑出来、洗干净坐标之后放出来的。每一件对着的都是**一类活**，不是一种偏好：陌生人拿
@@ -21,9 +23,9 @@
 ## 怎么装
 
 ```bash
-git clone https://github.com/j912835225-prog/claude-skills.git
-cp -r claude-skills/rough-cut ~/.claude/skills/      # 只要一件
-cp -r claude-skills/*/ ~/.claude/skills/             # 九件全要
+git clone https://github.com/j912835225-prog/whetstone.git
+cp -r whetstone/rough-cut ~/.claude/skills/      # 只要一件
+cp -r whetstone/*/ ~/.claude/skills/             # 九件全要
 ```
 
 放 `~/.claude/skills/` 是全局可用；放某个项目里的 `.claude/skills/` 只在那个项目生效。

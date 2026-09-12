@@ -1,10 +1,12 @@
-# claude-skills
+# whetstone
 
 [![English](https://img.shields.io/badge/English-current-1B3FA0?style=for-the-badge)](README.md)
 [![中文](https://img.shields.io/badge/中文-切换-C1352C?style=for-the-badge)](README.zh.md)
 [![Licence](https://img.shields.io/badge/licence-CC%20BY--NC--SA%204.0-2A2A2D?style=for-the-badge)](LICENSE)
 
 **English** · [中文说明请点这里 / Chinese version here](README.zh.md)
+
+**A whetstone cuts nothing. It makes the blade cut.**
 
 Nine skills for [Claude Code](https://claude.com/claude-code), distilled from a working
 skill library. Each one is a task class, not a preference: a procedure a stranger can run
@@ -24,9 +26,9 @@ on their own material, with the traps named and the costs stated.
 ## Install
 
 ```bash
-git clone https://github.com/j912835225-prog/claude-skills.git
-cp -r claude-skills/rough-cut ~/.claude/skills/      # one skill
-cp -r claude-skills/*/ ~/.claude/skills/             # all nine
+git clone https://github.com/j912835225-prog/whetstone.git
+cp -r whetstone/rough-cut ~/.claude/skills/      # one skill
+cp -r whetstone/*/ ~/.claude/skills/             # all nine
 ```
 
 `~/.claude/skills/` makes a skill available everywhere; `.claude/skills/` inside a
