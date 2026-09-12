@@ -4,18 +4,18 @@
 RECIPE
   subject:  一个人，一件事，其余都是陪衬
   intent:   announce
-  text:     剧本检查（锁）
-  inks:     ink #15151A + 靛青 #1B3FA0；纸 冷灰 #EAEAE6
-  division: 墨＝主角与标题；靛青＝那件事（一束光），别处不出现
-  layout:   图占版——人立在光里，光跨出下边
-  focus:    一个巨大的物：那束光，宽过画面三分之一
-  air:      右侧整片灰
+  text:     SCRIPT CHECK (locked)
+  inks:     ink #15151A + indigo #1B3FA0; paper cool grey #EAEAE6
+  division: ink = the figure and the type; indigo = the one thing (a shaft of light), nowhere else
+  layout:   image-dominant - the figure stands in the light, the light crosses the bottom edge
+  focus:    one enormous object: the shaft, wider than a third of the sheet
+  air:      the grey to the right
   paper:    ~45%
-  texture:  纸纹＋套版偏移
+  texture:  paper grain + misregistration
 
 WHY
-  「一场戏为一个人的一件事而写」——所以画面上只许站一个人，只许有一束光。
-  陪衬全删：这张海报本身就得过它自己那一条。
+  "A scene is written for one person and one thing." So exactly one figure stands here and
+  exactly one light falls. Every support element is cut - the poster has to pass its own rule.
 """
 from poster_kit import (CJK_SONG, H, INDIGO, INK, LATIN, MONO, W, COOL,  # noqa: F401
                         blob, cut_shape, cut_stroke, disc, footer, limb, rule, smooth,
@@ -40,20 +40,21 @@ def figure():
 
 
 def build():
-    rows = [("一人", "一事"), ("埋了的", "要收"), ("支线", "为主线服务，否则删"),
-            ("写完", "问这场怎么演")]
+    rows = [("ONE", "person, one thing"), ("PLANTED", "must be paid off"),
+            ("A SUBPLOT", "serves the spine, or goes"),
+            ("FINISHED?", "ask how it gets played")]
     right, y = [], 392
     for a, b in rows:
-        right.append(text(980, y, a, 40, INK, CJK_SONG, track=2.0))
-        right.append(text(1180, y, b, 40, INK, CJK_SONG, track=2.0))
+        right.append(text(980, y, a, 34, INK, MONO, track=2.4))
+        right.append(text(1206, y, b, 34, INK, LATIN, track=0.4))
         right.append(f'<path d="{cut_stroke([(980, y + 22), (1512, y + 20)], 2.4, 1.6, seed=int(y), wobble=0.9)}" fill="{INK}" opacity="0.35"/>')
         y += 104
 
     inner = (spotlight() + figure() + "".join(right)
-             + text(88, 172, "SCRIPT CHECK", 84, INK, LATIN, track=-0.8, weight="700")
+             + text(88, 176, "SCRIPT CHECK", 96, INK, LATIN, track=-1.2, weight="700")
              + rule(88, 210, 1512, 206, 3.6, 2.4, seed=5)
-             + text(88, 254, "一场戏为一个人的一件事而写，其余都是陪衬", 32, INK, CJK_SONG, track=3.0)
-             + footer("script-check", "结构 · 伏笔 · 对白八查 · 三处收口"))
+             + text(88, 258, "a scene is written for one person and one thing; everything else is support", 27, INK, LATIN, track=1.0)
+             + footer("script-check", "structure · planting · eight dialogue checks · three closes"))
     write("script-check", COOL, inner)
 
 

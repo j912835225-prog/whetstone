@@ -2,20 +2,21 @@
 """Poster: classical-chinese-translation.
 
 RECIPE
-  subject:  一百回的书脊，和第七十八回那一道缺口
+  subject:  a hundred chapter spines, and the gap where 78 should be
   intent:   notify
-  text:     译古书（锁）
-  inks:     ink #15151A + 赭石 #B45A33；纸 暖白 #F1EAD8
-  division: 墨＝一百道书脊与标题；赭石＝缺的那一回，只此一处
-  layout:   物件场——同一个物件重复一百次，变高矮
-  focus:    一个反常：整齐的一百道里，第七十八道是空的
-  air:      标题下那条横带
+  text:     CLASSICAL TRANSLATION (locked)
+  inks:     ink #15151A + ochre #B45A33; paper warm white #F1EAD8
+  division: ink = one hundred spines and the type; ochre = the missing chapter, and only that
+  layout:   object field - one element repeated a hundred times, varying in height
+  focus:    one abnormality: in a hundred even spines, the seventy-eighth is empty
+  air:      the band under the title
   paper:    ~50%
-  texture:  纸纹
+  texture:  paper grain
 
 WHY
-  这件 skill 的核心不是「怎么译」，是「译到第七十八回时禁令已经静默失效」。
-  缺口不会报错，它只是安静地把位置腾出来。所以海报画一百道，让那一道空着。
+  The skill is not about how to translate. It is about the fact that by chapter 78 the rule
+  set on day one has quietly stopped applying. A gap raises no error - it just clears a
+  space. So the poster draws a hundred, and leaves that one empty.
 """
 import math
 import random
@@ -46,13 +47,15 @@ def spines():
 
 def build():
     inner = (spines()
-             + text(88, 172, "CLASSICAL TRANSLATION", 76, INK, LATIN, track=-0.6, weight="700")
+             + text(88, 176, "CLASSICAL TRANSLATION", 88, INK, LATIN, track=-1.0, weight="700")
              + rule(88, 210, 1512, 206, 3.6, 2.4, seed=5)
-             + text(88, 254, "失败不在译不动，在译到第七十八回时禁令已经静默失效",
-                    32, INK, CJK_SONG, track=3.0)
-             + text(1512, 862, "缺口不会报错，它只是把位置腾出来让记忆去填",
-                    21, OCHRE, CJK_SONG, track=1.6, anchor="end")
-             + footer("classical-chinese-translation", "底本纪律 · 回目交叉核 · 四条防漂移"))
+             + text(88, 258, "the failure is never that you cannot translate it - it is that by chapter 78",
+                    27, INK, LATIN, track=1.0)
+             + text(88, 292, "the rule you set on day one has quietly stopped applying",
+                    27, INK, LATIN, track=1.0)
+             + text(1512, 866, "a gap raises no error. it just clears a space, and memory fills it.",
+                    22, OCHRE, LATIN, track=0.6, anchor="end")
+             + footer("classical-chinese-translation", "source discipline · cross-check every title · four drift traps"))
     write("classical-chinese-translation", WARM, inner)
 
 
