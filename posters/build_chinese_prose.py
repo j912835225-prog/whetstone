@@ -4,18 +4,20 @@
 RECIPE
   subject:  一段稿子，和删掉的那几行
   intent:   observe
-  text:     成稿检查（锁）
-  inks:     ink #15151A + cinnabar #C1352C；纸 暖白 #F1EAD8
-  division: 墨＝正文与标题；朱砂＝删改的那几笔，别的地方一点不出现
-  layout:   字占版——竖排大字统治左侧，右侧是被改过的稿面
-  focus:    竖排的两个大字「成稿」，是最小字的八倍
-  air:      左下那片纸
+  text:     CHINESE PROSE (locked) + a vertical CUT
+  inks:     ink #15151A + cinnabar #C1352C; paper warm white #F1EAD8
+  division: ink = the specimen and the type; cinnabar = the strikes, and nothing else
+  layout:   type-dominant - a vertical word governs the left, the edited page sits right
+  focus:    the vertical CUT, eight times the size of the smallest type
+  air:      the paper at lower left
   paper:    ~55%
-  texture:  纸纹＋套版偏移
+  texture:  paper grain + misregistration
 
 WHY
-  这件 skill 的判据是「删完意思没少，删对了」。所以海报画的不是干净的成品，是改过的稿：
-  留下的墨，划掉的朱砂。改稿的样子本身就是这件事的样子。
+  The skill's test is "if the meaning did not shrink, the cut was right". So the poster is
+  not a clean finished page - it is a page being edited: what stays in ink, what goes in red.
+  The specimen stays in Chinese because the specimen *is* the subject; everything around it
+  is English, so a reader who does not read Chinese can still see exactly what is happening.
 """
 from poster_kit import (CINNABAR, CJK_SONG, H, INK, LATIN, MONO, W, WARM,  # noqa: F401
                         cut_stroke, footer, rule, text, write)
@@ -41,16 +43,19 @@ def build():
             rows.append(f'<path d="{cut_stroke([(552, y - 15), (552 + len(s) * 39.4, y - 15)], 5, 3.4, seed=int(y), wobble=1.4)}" fill="{CINNABAR}"/>')
         y += 72
 
-    # 竖排大字：竖排本身就是那唯一的打破点，不再加第二个
-    vertical = "".join(text(224, 452 + i * 186, ch, 168, INK, CJK_SONG, anchor="middle")
-                       for i, ch in enumerate("成稿"))
+    # One vertical word - the vertical setting is the single disruption, so nothing else
+    # breaks the grid. It says what the red marks do.
+    vertical = "".join(text(206, 420 + i * 152, ch, 132, INK, LATIN, anchor="middle",
+                            weight="700")
+                       for i, ch in enumerate("CUT"))
 
     inner = ("".join(rows) + vertical
-             + text(88, 172, "CHINESE PROSE", 84, INK, LATIN, track=-0.8, weight="700")
+             + text(88, 176, "CHINESE PROSE", 96, INK, LATIN, track=-1.2, weight="700")
              + rule(88, 210, 1512, 206, 3.6, 2.4, seed=5)
-             + text(88, 254, "先合场合，再合事实，最后才合耳朵", 32, INK, CJK_SONG, track=3.0)
-             + text(1512, 300, "删完意思没少 · 删对了", 19, CINNABAR, CJK_SONG, track=2.0, anchor="end")
-             + footer("chinese-prose", "从动笔到交稿到评稿的一张检查表"))
+             + text(88, 258, "fit the occasion first, then the facts, then the ear", 27, INK, LATIN, track=1.0)
+             + text(1512, 302, "if the meaning did not shrink, the cut was right", 21, CINNABAR, LATIN, track=0.6, anchor="end")
+             + text(560, 330, "one paragraph, and what the red pencil takes out", 19, INK, MONO, track=1.0)
+             + footer("chinese-prose", "one checklist: drafting, revising, and judging a draft"))
     write("chinese-prose", WARM, inner)
 
 
